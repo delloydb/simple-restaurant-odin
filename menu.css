@@ -1,0 +1,132 @@
+/* Menu Page Specific Styles */
+.menu-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), url('../images/menu-hero-bg.jpg'));
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.menu-hero h1 {
+    font-size: 3rem;
+}
+
+.menu-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 0;
+    background: #f9f9f9;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.full-menu {
+    padding: 60px 0;
+}
+
+.menu-category h2 {
+    font-size: 2rem;
+    margin: 40px 0 20px;
+    color: var(--secondary);
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.menu-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-item-info {
+    padding: 20px;
+}
+
+.menu-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.menu-item-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item-meta span:first-child {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.dietary {
+    font-size: 0.9rem;
+    background: #f0f0f0;
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    padding: 80px 0;
+    background: var(--secondary);
+    color: white;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta h2 span {
+    color: var(--primary);
+}
+
+.cta p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}

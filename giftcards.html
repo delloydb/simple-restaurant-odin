@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Cards | Foodites Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Foodites</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="giftcards.html" class="active">Gift Cards</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="giftcard-hero">
+        <div class="container">
+            <h1>Give the Gift of <span>Foodites</span></h1>
+            <p>Perfect for birthdays, holidays, or any occasion</p>
+        </div>
+    </section>
+
+    <!-- Gift Card Options -->
+    <section class="giftcard-options">
+        <div class="container">
+            <div class="giftcard-tabs">
+                <button class="tab-btn active" data-tab="digital">Digital Gift Card</button>
+                <button class="tab-btn" data-tab="physical">Physical Gift Card</button>
+            </div>
+
+            <div class="tab-content active" id="digital">
+                <div class="giftcard-grid">
+                    <div class="giftcard-image">
+                        <img src="images/giftcard-digital.jpg" alt="Digital Gift Card">
+                    </div>
+                    <div class="giftcard-details">
+                        <h2>Digital Gift Card</h2>
+                        <p>Delivered instantly via email with a personalized message.</p>
+                        
+                        <div class="amount-options">
+                            <h3>Select Amount</h3>
+                            <div class="amount-buttons">
+                                <button class="amount-btn" data-amount="50">$50</button>
+                                <button class="amount-btn" data-amount="100">$100</button>
+                                <button class="amount-btn" data-amount="150">$150</button>
+                                <button class="amount-btn custom-amount">Custom</button>
+                            </div>
+                            <div class="custom-amount-input">
+                                <input type="number" min="25" placeholder="Enter amount ($25 minimum)">
+                            </div>
+                        </div>
+
+                        <form class="giftcard-form">
+                            <div class="form-group">
+                                <label for="recipient-name">Recipient Name</label>
+                                <input type="text" id="recipient-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-email">Recipient Email</label>
+                                <input type="email" id="recipient-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sender-name">Your Name</label>
+                                <input type="text" id="sender-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Personal Message (Optional)</label>
+                                <textarea id="message" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Purchase Gift Card</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="physical">
+                <div class="giftcard-grid">
+                    <div class="giftcard-image">
+                        <img src="images/giftcard-physical.jpg" alt="Physical Gift Card">
+                    </div>
+                    <div class="giftcard-details">
+                        <h2>Physical Gift Card</h2>
+                        <p>Elegant printed card mailed to recipient (or yourself).</p>
+                        
+                        <div class="amount-options">
+                            <h3>Select Amount</h3>
+                            <div class="amount-buttons">
+                                <button class="amount-btn" data-amount="50">$50</button>
+                                <button class="amount-btn" data-amount="100">$100</button>
+                                <button class="amount-btn" data-amount="150">$150</button>
+                                <button class="amount-btn custom-amount">Custom</button>
+                            </div>
+                            <div class="custom-amount-input">
+                                <input type="number" min="25" placeholder="Enter amount ($25 minimum)">
+                            </div>
+                        </div>
+
+                        <form class="giftcard-form">
+                            <div class="form-group">
+                                <label for="physical-recipient">Recipient Name</label>
+                                <input type="text" id="physical-recipient" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="shipping-address">Shipping Address</label>
+                                <textarea id="shipping-address" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="physical-sender">Your Name</label>
+                                <input type="text" id="physical-sender" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="physical-message">Personal Message (Optional)</label>
+                                <textarea id="physical-message" rows="4"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="delivery-date">Delivery Date (Optional)</label>
+                                <input type="date" id="delivery-date">
+                            </div>
+                            <button type="submit" class="btn">Purchase & Ship Card</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redemption Info -->
+    <section class="redemption-info">
+        <div class="container">
+            <div class="info-box">
+                <h2>How to Redeem Your Gift Card</h2>
+                <ol>
+                    <li>Present your digital or physical card when paying</li>
+                    <li>For online orders, enter code at checkout</li>
+                    <li>Cards never expire and are redeemable for food, drinks, and events</li>
+                </ol>
+                <div class="check-balance">
+                    <h3>Check Gift Card Balance</h3>
+                    <form class="balance-form">
+                        <input type="text" placeholder="Enter Gift Card Number" required>
+                        <input type="text" placeholder="PIN (if applicable)">
+                        <button type="submit" class="btn-outline">Check Balance</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="giftcard-faq">
+        <div class="container">
+            <h2>Gift Card <span>FAQ</span></h2>
+            <div class="faq-item">
+                <button class="faq-question">How long does delivery take?<i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Digital gift cards are delivered immediately via email. Physical cards typically arrive within 5-7 business days via standard mail.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can I use gift cards for reservations?<i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Yes! Gift cards can be used for dining, takeout, delivery, and private events.</p>
+                </div>
+            </div>
+            <!-- Add more FAQ items as needed -->
+        </div>
+    </section>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer>
+        <!-- Copy from index.html -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

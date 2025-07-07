@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online | Foodites Takeout & Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Foodites</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="order.html" class="active">Order Online</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="order-hero">
+        <div class="container">
+            <h1>Foodites <span>To Go</span></h1>
+            <p>Enjoy our flavors at home - ready in 30 minutes</p>
+        </div>
+    </section>
+
+    <!-- Order Options -->
+    <section class="order-options">
+        <div class="container">
+            <div class="option-tabs">
+                <button class="tab-btn active" data-tab="delivery">Delivery</button>
+                <button class="tab-btn" data-tab="pickup">Pickup</button>
+            </div>
+            
+            <!-- Delivery Partners -->
+            <div class="delivery-partners">
+                <h3>Order via:</h3>
+                <div class="partner-logos">
+                    <a href="#"><img src="images/delivery-logos/ubereats.png" alt="Uber Eats"></a>
+                    <a href="#"><img src="images/delivery-logos/doordash.png" alt="DoorDash"></a>
+                    <a href="#"><img src="images/delivery-logos/grubhub.png" alt="Grubhub"></a>
+                </div>
+                <p class="pickup-note">Prefer to order direct? <a href="#menu">Browse our menu below</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="order-menu">
+        <div class="container">
+            <h2>Our <span>Takeout</span> Menu</h2>
+            <div class="menu-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="starters">Starters</button>
+                <button class="filter-btn" data-category="mains">Mains</button>
+                <button class="filter-btn" data-category="desserts">Desserts</button>
+                <button class="filter-btn" data-category="drinks">Drinks</button>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Menu items will be populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be populated via JS -->
+        </div>
+        <div class="cart-total">
+            <p>Subtotal: <span>$0.00</span></p>
+            <p>Tax: <span>$0.00</span></p>
+            <p class="total">Total: <span>$0.00</span></p>
+            <button class="btn checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer>
+        <!-- Copy from index.html -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

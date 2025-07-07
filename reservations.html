@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations at Foodites | Book a Table</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+    <!-- Navigation Bar (Same as Homepage) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Foodites</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reservations.html" class="active">Reservations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="reservations-hero">
+        <div class="container">
+            <h1>Book a <span>Table</span></h1>
+            <p>Secure your spot for an unforgettable dining experience.</p>
+        </div>
+    </section>
+
+    <!-- Reservation Form -->
+    <section class="reservation-form">
+        <div class="container">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" min="11:00" max="22:00" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Guests</label>
+                    <select id="guests" required>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="4" selected>4 People</option>
+                        <option value="6">6 People</option>
+                        <option value="8+">8+ People (Private Dining)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="requests">Special Requests</label>
+                    <textarea id="requests" placeholder="Allergies, celebrations, etc."></textarea>
+                </div>
+                <button type="submit" class="btn">Confirm Reservation</button>
+            </form>
+
+            <!-- Confirmation Modal (Hidden by Default) -->
+            <div id="confirmationModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Reservation Confirmed!</h3>
+                    <p id="confirmationDetails"></p>
+                    <p>We’ve sent details to your email.</p>
+                    <a href="menu.html" class="btn">Explore Our Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section class="location-hours">
+        <div class="container">
+            <div class="map" id="restaurantMap"></div>
+            <div class="hours">
+                <h2>Hours</h2>
+                <ul>
+                    <li><strong>Monday - Thursday:</strong> 11:00 AM - 10:00 PM</li>
+                    <li><strong>Friday - Saturday:</strong> 11:00 AM - 11:00 PM</li>
+                    <li><strong>Sunday:</strong> 10:00 AM - 9:00 PM</li>
+                </ul>
+                <div class="contact-info">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Flavor Street, New York, NY</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) FOOD-ITE</p>
+                    <p><i class="fas fa-envelope"></i> reservations@foodites.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer>
+        <!-- Copy from index.html -->
+    </footer>
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

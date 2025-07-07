@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Dining & Events | Foodites</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Foodites</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="events-hero">
+        <div class="container">
+            <h1>Private <span>Dining</span> & Events</h1>
+            <p>Create unforgettable moments in our exclusive spaces</p>
+        </div>
+    </section>
+
+    <!-- Event Types -->
+    <section class="event-types">
+        <div class="container">
+            <h2>Our <span>Event</span> Spaces</h2>
+            <div class="event-grid">
+                <div class="event-card">
+                    <img src="images/events/private-dining.jpg" alt="Private Dining">
+                    <div class="event-info">
+                        <h3>Private Dining Room</h3>
+                        <ul>
+                            <li><i class="fas fa-user-friends"></i> Up to 20 guests</li>
+                            <li><i class="fas fa-utensils"></i> Custom tasting menus</li>
+                            <li><i class="fas fa-wine-glass-alt"></i> Wine pairing available</li>
+                        </ul>
+                        <a href="#inquiry" class="btn-outline">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="images/events/wedding-event.jpg" alt="Wedding Reception">
+                    <div class="event-info">
+                        <h3>Weddings & Celebrations</h3>
+                        <ul>
+                            <li><i class="fas fa-user-friends"></i> Up to 100 guests</li>
+                            <li><i class="fas fa-camera"></i> Dedicated event coordinator</li>
+                            <li><i class="fas fa-glass-cheers"></i> Full bar service</li>
+                        </ul>
+                        <a href="#inquiry" class="btn-outline">Inquire Now</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="images/events/corporate-event.jpg" alt="Corporate Event">
+                    <div class="event-info">
+                        <h3>Corporate Events</h3>
+                        <ul>
+                            <li><i class="fas fa-user-friends"></i> Up to 150 guests</li>
+                            <li><i class="fas fa-projector"></i> AV equipment available</li>
+                            <li><i class="fas fa-coffee"></i> Custom catering packages</li>
+                        </ul>
+                        <a href="#inquiry" class="btn-outline">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="events-gallery">
+        <div class="container">
+            <h2>Recent <span>Events</span></h2>
+            <div class="gallery-grid">
+                <img src="images/events/gallery-1.jpg" alt="Event 1">
+                <img src="images/events/gallery-2.jpg" alt="Event 2">
+                <img src="images/events/gallery-3.jpg" alt="Event 3">
+                <img src="images/events/gallery-4.jpg" alt="Event 4">
+                <img src="images/events/gallery-5.jpg" alt="Event 5">
+                <img src="images/events/gallery-6.jpg" alt="Event 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section id="inquiry" class="event-inquiry">
+        <div class="container">
+            <div class="inquiry-content">
+                    <div class="form-group">
+                        <label for="eventType" class="visually-hidden">Event Type</label>
+                        <select id="eventType" required>
+                            <option value="">Event Type</option>
+                            <option>Private Dining</option>
+                            <option>Wedding</option>
+                            <option>Corporate Event</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventType2" class="visually-hidden">Event Type</label>
+                        <select id="eventType2" required>
+                            <option value="">Event Type</option>
+                            <option>Private Dining</option>
+                            <option>Wedding</option>
+                            <option>Corporate Event</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" placeholder="Event Date" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Number of Guests" min="10" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea placeholder="Tell us about your event"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="event-testimonials">
+        <div class="container">
+            <h2>What Our <span>Clients</span> Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <blockquote>
+                        "Foodites made our wedding reception magical. The food was exceptional and their team handled every detail perfectly!"
+                    </blockquote>
+                    <p>- Sarah & Michael J.</p>
+                </div>
+                <div class="testimonial">
+                    <blockquote>
+                        "Our corporate retreat was a huge success thanks to Foodites' impeccable service and creative menu options."
+                    </blockquote>
+                    <p>- TechStart Inc.</p>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <button class="next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer>
+        <!-- Copy from index.html -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

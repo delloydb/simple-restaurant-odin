@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodites Menu | Gourmet Dining</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar (Same as Homepage) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Foodites</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reservations.html">Reservations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Our <span>Menu</span></h1>
+            <p>Seasonal ingredients, bold flavors.</p>
+        </div>
+    </section>
+
+    <!-- Menu Filter Tabs -->
+    <div class="menu-filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="starters">Starters</button>
+        <button class="filter-btn" data-category="mains">Mains</button>
+        <button class="filter-btn" data-category="desserts">Desserts</button>
+        <button class="filter-btn" data-category="drinks">Drinks</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <section class="full-menu">
+        <div class="container">
+            <!-- Starters -->
+            <div class="menu-category" id="starters">
+                <h2>Starters</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="starters" data-dietary="vegetarian">
+                        <img src="images/starters/bruschetta.jpg" alt="Bruschetta">
+                        <div class="menu-item-info">
+                            <h3>Truffle Bruschetta</h3>
+                            <p>Crispy bread, truffle oil, heirloom tomatoes, basil</p>
+                            <div class="menu-item-meta">
+                                <span>$14</span>
+                                <span class="dietary">🌱 Vegetarian</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="starters" data-dietary="gluten-free">
+                        <img src="images/starters/soup.jpg" alt="Soup">
+                        <div class="menu-item-info">
+                            <h3>Roasted Tomato Soup</h3>
+                            <p>Creamy, with basil oil and parmesan crisps</p>
+                            <div class="menu-item-meta">
+                                <span>$12</span>
+                                <span class="dietary">🌾 GF</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mains -->
+            <div class="menu-category" id="mains">
+                <h2>Mains</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="mains" data-dietary="spicy">
+                        <img src="images/mains/pasta.jpg" alt="Pasta">
+                        <div class="menu-item-info">
+                            <h3>Spicy Crab Pasta</h3>
+                            <p>Linguine, chili, garlic, fresh crab, lemon zest</p>
+                            <div class="menu-item-meta">
+                                <span>$28</span>
+                                <span class="dietary">⚡ Spicy</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="mains" data-dietary="gluten-free">
+                        <img src="images/mains/salmon.jpg" alt="Salmon">
+                        <div class="menu-item-info">
+                            <h3>Seared Salmon</h3>
+                            <p>Citrus glaze, asparagus, wild rice pilaf</p>
+                            <div class="menu-item-meta">
+                                <span>$32</span>
+                                <span class="dietary">🌾 GF</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category" id="desserts">
+                <h2>Desserts</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="desserts" data-dietary="vegetarian">
+                        <img src="images/desserts/souffle.jpg" alt="Soufflé">
+                        <div class="menu-item-info">
+                            <h3>Chocolate Soufflé</h3>
+                            <p>Warm, with vanilla bean ice cream</p>
+                            <div class="menu-item-meta">
+                                <span>$14</span>
+                                <span class="dietary">🌱 Vegetarian</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="menu-category" id="drinks">
+                <h2>Drinks</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="drinks" data-dietary="alcohol">
+                        <img src="images/drinks/cocktail.jpg" alt="Cocktail">
+                        <div class="menu-item-info">
+                            <h3>Foodites Spritz</h3>
+                            <p>Aperol, prosecco, soda, orange slice</p>
+                            <div class="menu-item-meta">
+                                <span>$15</span>
+                                <span class="dietary">🍸 Cocktail</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Craving something <span>specific</span>?</h2>
+            <p>Ask our chef for customizations!</p>
+            <a href="reservations.html" class="btn">Reserve a Table</a>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer>
+        <!-- Copy from index.html -->
+    </footer>
+    <script src="menu.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
