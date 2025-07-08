@@ -269,3 +269,153 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Press Section Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    const pressCarousel = document.querySelector('.press-carousel');
+    const pressItems = document.querySelectorAll('.press-item');
+    const prevBtn = document.querySelector('.press-prev');
+    const nextBtn = document.querySelector('.press-next');
+    const dots = document.querySelectorAll('.press-dots .dot');
+    let currentIndex = 0;
+    
+    // Set up event listeners for navigation
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            navigate(-1);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            navigate(1);
+        });
+    }
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            navigate(-1);
+        } else if (e.key === 'ArrowRight') {
+            navigate(1);
+        }
+    });
+    
+    // Auto-rotate carousel
+    let slideInterval = setInterval(() => {
+        navigate(1);
+    }, 5000);
+    
+    // Pause on hover
+    pressCarousel.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+    
+    pressCarousel.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(() => {
+            navigate(1);
+        }, 5000);
+    });
+    
+    // Navigation functions
+    function navigate(direction) {
+        goToSlide(currentIndex + direction);
+    }
+    
+    function goToSlide(index) {
+        // Wrap around if at ends
+        if (index >= pressItems.length) {
+            index = 0;
+        } else if (index < 0) {
+            index = pressItems.length - 1;
+        }
+        
+        // Scroll to the item
+        pressItems[index].scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
+        
+        // Update current index
+        currentIndex = index;
+        
+        // Update active dot
+        updateDots();
+    }
+    
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            if (index === currentIndex % 3) { // Only 3 dots for the visible items
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+    
+    // Animation on scroll
+    const pressSection = document.querySelector('.press-section');
+    
+    const animateOnScroll = () => {
+        const sectionPosition = pressSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (sectionPosition < screenPosition) {
+            pressSection.style.opacity = '1';
+            pressSection.style.transform = 'translateY(0)';
+            
+            pressItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        }
+    };
+    
+    // Set initial state for animation
+    pressSection.style.opacity = '0';
+    pressSection.style.transform = 'translateY(50px)';
+    pressSection.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    
+    pressItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    });
+    
+    // Run once on load
+    animateOnScroll();
+    
+    // Run on scroll
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    pressCarousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    pressCarousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            navigate(1); // Swipe left
+        }
+        
+        if (touchEndX > touchStartX + 50) {
+            navigate(-1); // Swipe right
+        }
+    }
+});
+
