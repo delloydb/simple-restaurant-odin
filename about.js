@@ -419,3 +419,100 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// CTA Section Interactions
+document.addEventListener('DOMContentLoaded', function() {
+    // Background video fallback
+    const ctaVideo = document.querySelector('.cta-background video');
+    if (ctaVideo) {
+        ctaVideo.addEventListener('error', function() {
+            this.parentElement.innerHTML = '<img src="images/cta-fallback.jpg" alt="Foodites dining experience" style="width:100%;height:100%;object-fit:cover;">';
+        });
+    }
+    
+    // Scroll down button
+    const ctaScroll = document.querySelector('.cta-scroll');
+    if (ctaScroll) {
+        ctaScroll.addEventListener('click', function() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Button hover effects
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            this.style.setProperty('--mouse-x', `${x}px`);
+            this.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+    
+    // Animation on scroll
+    const ctaSection = document.querySelector('.cta-section');
+    
+    const animateOnScroll = () => {
+        const sectionPosition = ctaSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (sectionPosition < screenPosition) {
+            ctaSection.style.opacity = '1';
+            ctaSection.style.transform = 'translateY(0)';
+        }
+    };
+    
+    // Set initial state for animation
+    ctaSection.style.opacity = '0';
+    ctaSection.style.transform = 'translateY(50px)';
+    ctaSection.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    
+    // Run once on load
+    animateOnScroll();
+    
+    // Run on scroll
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // Parallax effect for background
+    window.addEventListener('scroll', function() {
+        if (ctaVideo) {
+            const scrollPosition = window.pageYOffset;
+            ctaVideo.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+        }
+    });
+    
+    // Add ripple effect to buttons
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Remove any existing ripples
+            const existingRipples = this.querySelectorAll('.ripple');
+            existingRipples.forEach(ripple => ripple.remove());
+            
+            // Create new ripple
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            
+            // Position ripple
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size/2;
+            const y = e.clientY - rect.top - size/2;
+            
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            
+            this.appendChild(ripple);
+            
+            // Remove ripple after animation
+            setTimeout(() => {
+                ripple.remove();
+            }, 1000);
+        });
+    });
+});
+
