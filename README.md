@@ -30,7 +30,7 @@
 
 ## 📸 Preview
 
-> *(Add screenshots or a live preview link here if available)*
+> **
 
 ---
 
