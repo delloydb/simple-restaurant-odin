@@ -28,97 +28,223 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+  <!-- Hero Section -->
     <section class="reservations-hero">
+        <div class="hero-background">
+            <div class="overlay"></div>
+            <img src="images/reservation-hero.jpg" alt="Foodites dining room" loading="lazy">
+        </div>
         <div class="container">
-            <h1>Book a <span>Table</span></h1>
-            <p>Secure your spot for an unforgettable dining experience.</p>
+            <div class="hero-content">
+                <h1 class="hero-title">Book a <span class="text-highlight">Table</span></h1>
+                <p class="hero-subtitle">Secure your spot for an unforgettable dining experience</p>
+                <a href="#reservation-form" class="btn-scroll">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 14L12 21L5 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M19 8L12 15L5 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Reservation Form -->
-    <section class="reservation-form">
+    <section id="reservation-form" class="reservation-form-section">
         <div class="container">
-            <form id="bookingForm">
-                <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" id="date" required>
+            <div class="section-header">
+                <span class="section-tag">Make a Reservation</span>
+                <h2 class="section-title">Plan Your <span class="text-highlight">Visit</span></h2>
+            </div>
+
+            <form id="bookingForm" class="booking-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <div class="input-with-icon">
+                            <input type="date" id="date" required>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 2V5M16 2V5M3.5 9.09H20.5M21 8.5V17C21 20 19.5 22 16 22H8C4.5 22 3 20 3 17V8.5C3 5.5 4.5 3.5 8 3.5H16C19.5 3.5 21 5.5 21 8.5Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.6947 13.7H15.7037M15.6947 16.7H15.7037M11.9955 13.7H12.0045M11.9955 16.7H12.0045M8.29431 13.7H8.30329M8.29431 16.7H8.30329" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <div class="input-with-icon">
+                            <input type="time" id="time" min="11:00" max="22:00" required>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2C17.52 2 22 6.48 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.71 15.18L12.61 13.33C12.07 13.01 11.63 12.24 11.63 11.61V7.51001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">Guests</label>
+                        <div class="input-with-icon">
+                            <select id="guests" required>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="4" selected>4 People</option>
+                                <option value="6">6 People</option>
+                                <option value="8+">8+ People (Private Dining)</option>
+                            </select>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="name" required>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <div class="input-with-icon">
+                            <input type="email" id="email" required>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <div class="input-with-icon">
+                            <input type="tel" id="phone" required>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 4H9L11 9L8.5 10.5C9.57096 12.6715 11.3285 14.429 13.5 15.5L15 13L20 15V19C20 20.1046 19.1046 21 18 21C14.0993 21 10.34 19.4469 7.39279 16.6072C4.4469 13.6601 2.89543 9.90604 3 6C3 4.89543 3.89543 4 5 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="time">Time</label>
-                    <input type="time" id="time" min="11:00" max="22:00" required>
-                </div>
-                <div class="form-group">
-                    <label for="guests">Guests</label>
-                    <select id="guests" required>
-                        <option value="1">1 Person</option>
-                        <option value="2">2 People</option>
-                        <option value="4" selected>4 People</option>
-                        <option value="6">6 People</option>
-                        <option value="8+">8+ People (Private Dining)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" required>
-                </div>
+
                 <div class="form-group full-width">
                     <label for="requests">Special Requests</label>
-                    <textarea id="requests" placeholder="Allergies, celebrations, etc."></textarea>
+                    <textarea id="requests" placeholder="Allergies, celebrations, seating preferences, etc."></textarea>
                 </div>
-                <button type="submit" class="btn">Confirm Reservation</button>
+
+                <button type="submit" class="btn btn-submit">
+                    <span>Confirm Reservation</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </form>
 
-            <!-- Confirmation Modal (Hidden by Default) -->
+            <!-- Confirmation Modal -->
             <div id="confirmationModal" class="modal">
                 <div class="modal-content">
                     <span class="close-modal">&times;</span>
-                    <i class="fas fa-check-circle"></i>
+                    <div class="modal-icon">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18457 2.99721 7.13633 4.39828 5.49707C5.79935 3.85782 7.69279 2.71538 9.79619 2.24015C11.8996 1.76491 14.1003 1.98234 16.07 2.86" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 4L12 14.01L9 11.01" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <h3>Reservation Confirmed!</h3>
                     <p id="confirmationDetails"></p>
-                    <p>We’ve sent details to your email.</p>
-                    <a href="menu.html" class="btn">Explore Our Menu</a>
+                    <p>We've sent the details to your email.</p>
+                    <a href="menu.html" class="btn btn-outline">
+                        <span>Explore Our Menu</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Location & Hours -->
-    <section class="location-hours">
+    <section class="location-hours-section">
         <div class="container">
-            <div class="map" id="restaurantMap"></div>
-            <div class="hours">
-                <h2>Hours</h2>
-                <ul>
-                    <li><strong>Monday - Thursday:</strong> 11:00 AM - 10:00 PM</li>
-                    <li><strong>Friday - Saturday:</strong> 11:00 AM - 11:00 PM</li>
-                    <li><strong>Sunday:</strong> 10:00 AM - 9:00 PM</li>
-                </ul>
-                <div class="contact-info">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Flavor Street, New York, NY</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) FOOD-ITE</p>
-                    <p><i class="fas fa-envelope"></i> reservations@foodites.com</p>
+            <div class="section-header">
+                <span class="section-tag">Visit Us</span>
+                <h2 class="section-title">Location & <span class="text-highlight">Hours</span></h2>
+            </div>
+
+            <div class="location-grid">
+                <div class="map-container">
+                    <div class="map" id="restaurantMap"></div>
+                    <div class="map-overlay">
+                        <h3>Find Us</h3>
+                        <address>
+                            <p><svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg> 123 Flavor Street, New York, NY</p>
+                            <p><svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 4H9L11 9L8.5 10.5C9.57096 12.6715 11.3285 14.429 13.5 15.5L15 13L20 15V19C20 20.1046 19.1046 21 18 21C14.0993 21 10.34 19.4469 7.39279 16.6072C4.4469 13.6601 2.89543 9.90604 3 6C3 4.89543 3.89543 4 5 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg> +1 (555) FOOD-ITE</p>
+                            <p><svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg> reservations@foodites.com</p>
+                        </address>
+                    </div>
+                </div>
+
+                <div class="hours-container">
+                    <div class="hours-card">
+                        <h3>Hours of Operation</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span class="day">Monday - Thursday</span>
+                                <span class="time">11:00 AM - 10:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Friday - Saturday</span>
+                                <span class="time">11:00 AM - 11:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Sunday</span>
+                                <span class="time">10:00 AM - 9:00 PM</span>
+                            </li>
+                        </ul>
+
+                        <div class="parking-info">
+                            <h4>Parking</h4>
+                            <p>Valet parking available Friday-Sunday. Street parking and nearby garages available.</p>
+                        </div>
+
+                        <div class="transportation">
+                            <h4>Public Transportation</h4>
+                            <div class="transport-icons">
+                                <span class="transport-icon">🚇</span>
+                                <span class="transport-icon">🚌</span>
+                                <span class="transport-icon">🚕</span>
+                            </div>
+                            <p>Nearest subway: 5th Ave Station (5 min walk)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Same as Homepage) -->
+    <script src="js/reservations.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+
     <footer>
-        <!-- Copy from index.html -->
+
     </footer>
 
     <!-- Leaflet JS for Map -->
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="script.js"></script>
+   
 </body>
 </html>
